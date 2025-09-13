@@ -39,7 +39,7 @@ DB_PASSWORD=yourpassword
 DB_HOST=localhost  # Use 'db' instead of 'localhost' when running inside Docker
 DB_PORT=5432
 
-### Note that the values are not to be quoted and there shouldn't be a whitespace at the left and right side of the equal sign.
+__Note that the values are not to be quoted and there shouldn't be a whitespace at the left and right side of the equal sign.__
 
 DEBUG=True enables development mode with live reload.
 DEBUG=False switches to production mode with Gunicorn.
@@ -57,31 +57,32 @@ docker-compose up --build
 
 After cloning the repo, go through the following steps
 
-1) Make your virtual environment:
+1) __Make your virtual environment:__
 ```
 python -m venv venv
 ```
 
-2) Activate the virtual environment:
-windows users:
+2) __Activate the virtual environment:__
+_windows users:_
 ```
 .\venv\Scripts\activate
 ```
 
-MacOS or Linux users:
+_MacOS or Linux users:_
 ```
 source venv/bin/activate
 ```
 
-3) install the required packages:
+3) __install the required packages:__
 ```
 pip install -r requirements.txt
 ```
 
-4) install postgresql on your machine.
+4) __install postgresql on your machine.__
 
-5) make a database and a postgresql user and give the user the required privileges:
-Customize the following command based on your .env file
+5) __make a database and a postgresql user and give the user the required privileges:__
+
+Customize the following commands based on your .env file
 
 a) Open psql:
 ```
@@ -108,22 +109,22 @@ e) Grant more privileges in order for tests to work:
 ALTER USER your_user CREATEDB;
 ```
 
-6) Go to the root of the project where "manage.py" exists and run:
+6) __Go to the root of the project where "manage.py" exists and run:__
 ```
 python manage.py makemigrations
 ```
 
-7) migrate:
+7) __migrate:__
 ```
 python manage.py migrate
 ```
 
-8) And finally run the server:
+8) __And finally run the server:__
 ```
 python manage.py runserver
 ```
 
-🧪 Running Tests
+## 🧪 Running Tests
 
 Run the full test suite inside Docker:
 ```
@@ -138,4 +139,4 @@ pytest
 📚 API Documentation
 After running the server, you can go to http://localhost:8000/api/v1/swagger/ to explore the API using Swagger UI.
 
-And as always enjoy coding.
+_And as always enjoy coding._
