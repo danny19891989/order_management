@@ -1,25 +1,3 @@
-Instructions:
-1) use the file "your.env" as a sample for all the environment variables required for this project.
-2) If you want to run the project in production mode, inside your.env file, change DEBUG to False and for developing purposes, set it to True.
-3) After changing all the env variables, just rename it to .env
-
-Note that for developing, you should have the following variables in your .env:
-DEBUG=True
-DB_HOST=localhost
-
-And For production:
-DEBUG=False
-DB_HOST=db
-
-4) Then restart or start your app by running:
-docker-compose up --build       (if you like containerized version of this app)
-
-or
-
-python manage.py runserver (if you prefer using it locally)
-
-
-Details:
 # 🛠️ Order Management API
 
 A modular, secure, and scalable Django REST Framework project for managing orders with role-based access control, JWT authentication, and Swagger documentation. Built for both rapid development and production deployment using Docker.
@@ -39,19 +17,31 @@ A modular, secure, and scalable Django REST Framework project for managing order
 
 ## ⚙️ Environment Configuration
 
+Setup Instructions
+
+To configure this project for development or production, follow these steps:
+🔹 1. Use your.env as a Template
+
+Start by copying the provided your.env file. It contains all the required environment variables for this project.
+
+🔹 2. Choose Your Environment Mode
+
+Inside .env, set the DEBUG variable based on your intended environment:
+Development Mode or Production Mode
+
 All settings are controlled via a single `.env` file at the project root:
 
 ```env
-DEBUG=True
-DB_NAME=order_management
-DB_USER=danny
+DEBUG=True or False
+DB_NAME=your_db_name
+DB_USER=your_db_user
 DB_PASSWORD=yourpassword
 DB_HOST=localhost  # Use 'db' when running inside Docker
 DB_PORT=5432
 
-    DEBUG=True enables development mode with live reload
 
-    DEBUG=False switches to production mode with Gunicorn
+DEBUG=True enables development mode with live reload
+DEBUG=False switches to production mode with Gunicorn
 
 
 🐳 Docker Setup
