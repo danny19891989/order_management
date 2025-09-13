@@ -78,4 +78,4 @@ Or locally:
 pytest
 
 📚 API Documentation
-More importantly you can go to http://localhost:8000/swagger after running the server to explore the API using Swagger UI.
+More importantly you can go to http://localhost:8000/api/v1/swagger/ after running the server to explore the API using Swagger UI.
