@@ -50,6 +50,10 @@ class OrderRetrieveUpdateDestroyView(RetrieveUpdateDestroyAPIView):
     permission_classes = [IsAuthenticated, IsManagerOrOwner]
 
     def get_queryset(self) -> QuerySet[Order]:
+        # Short-circuit schema generation to avoid terminal traceback
+        if getattr(self, 'swagger_fake_view', False):
+            return Order.objects.none()
+
         user = self.request.user
         if not user.is_authenticated:
             raise NotAuthenticated("Authentication credentials were not provided.")
